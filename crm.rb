@@ -13,12 +13,13 @@ get "/" do
 end
 
 get "/contacts" do
-  @crm_app_name = "My CRM"
-
-
   erb :contacts
 end
 
 get "/contacts/new" do
   erb :new_contact
+end
+
+post "/contacts" do
+  puts params
 end
