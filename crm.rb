@@ -21,5 +21,14 @@ get "/contacts/new" do
 end
 
 post "/contacts" do
-  puts params
+  first_name = params['first_name'].capitalize
+  last_name = params['last_name'].capitalize
+  email = params['email'].downcase
+  notes = params['notes']
+
+  contact = Contact.new(first_name, last_name, email, notes)
+
+  $rolodex.add_contact(contact)
+
+  redirect to('/contacts')
 end
