@@ -7,8 +7,7 @@
 </head>
 
 <body>
-  <h1>Welcome to <%= @crm_app_name %></h1>
-  <p>Contacts</p>
+  <h1>View all contacts</h1>
   <ul>
   <% $rolodex.contacts.each do |contact| %>
     <li><%= contact.first_name %> <%= contact.last_name %></li>
