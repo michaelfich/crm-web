@@ -10,8 +10,9 @@
   <h1>Welcome to <%= @crm_app_name %></h1>
   <p>Contacts</p>
   <ul>
-    <li><a href="/contacts">View all contacts</a></li>
-    <li><a href="/contact/new">Add a contact</a></li>
+  <% @contacts.each do |contact| %>
+    <li><%= contact.first_name %> <%= contact.last_name %></li>
+  <% end %>
   </ul>
 </body>
 </html>
