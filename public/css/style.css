@@ -1,4 +1,98 @@
 body {
-  width: 400px;
+  width: 800px;
   margin: 20px auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10pt;
+  color: #222;
+}
+
+a {
+  color: red;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+header {
+  border-bottom: 1px solid #444;
+  margin-bottom: 20px;
+}
+
+h1 {
+  padding-top: 50px;
+  letter-spacing: -2px;
+  color: #444;
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: #666;
+  font-style: oblique;
+  text-align: center;
+}
+
+nav > ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
+
+nav > ul li {
+  display: inline-block;
+}
+
+nav > ul li a {
+  display: block;
+  padding: .5em 2em;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #555;
+}
+
+nav > ul li a:hover,
+nav > ul li a:active {
+  border: 1px solid red;
+  text-decoration: none;
+  color: red;
+}
+
+form.add_contact label {
+  display: block;
+  margin: 1em 0;
+  text-align: center
+}
+
+form.add_contact input[type=text] {
+  display: block;
+  padding: 1em;
+  width: 400px;
+  margin: 0 auto 20px;
+}
+
+.submit {
+  display: block;
+  padding: 1em 5em;
+  margin: 0 auto;
+}
+
+footer {
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  padding-top: 5px;
+}
+
+ul.social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+ul.social li {
+  display: inline;
+  margin: 0 5px;
 }

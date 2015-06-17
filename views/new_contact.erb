@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Contacts | Customer Relationship Management</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+<h2>Create new contact</h2>
 
-<body>
-  <h1>Create new contact</h1>
-  <form action="/contacts" method="post">
-    <input type="text" name="first_name">
-    <input type="text" name="last_name">
-    <input type="text" name="email">
-    <input type="text" name="notes">
-    <input type="submit" name="Submit">
-  </form>
-</body>
-</html>
+<form action="/contacts" method="post" class="add_contact">
+  <input type="text" name="first_name" placeholder="First name">
+  <input type="text" name="last_name" placeholder="Last name">
+  <input type="text" name="email" placeholder="Email address">
+  <input type="text" name="notes" placeholder="Notes">
+  <input type="submit" name="Submit" class="submit">
+</form>
