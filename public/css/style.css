@@ -26,6 +26,7 @@ h1 {
   color: #444;
   font-size: 3em;
   margin-bottom: 0;
+  text-align: center;
 }
 
 h2 {
@@ -59,23 +60,28 @@ nav > ul li a:active {
   color: red;
 }
 
-form.add_contact label {
-  display: block;
-  margin: 1em 0;
-  text-align: center
-}
-
-form.add_contact input[type=text] {
-  display: block;
-  padding: 1em;
+form div.field {
   width: 400px;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
 }
 
-.submit {
+form div.field label {
   display: block;
-  padding: 1em 5em;
   margin: 0 auto;
+  font-size: .85em;
+  color: #777;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+form div.field input {
+  display: block;
+  padding: 10px;
+  width: 376px;
+}
+
+form div.button {
+  text-align: center;
 }
 
 footer {
@@ -95,4 +101,15 @@ ul.social {
 ul.social li {
   display: inline;
   margin: 0 5px;
+}
+
+.show_contact {
+  width: 300px;
+  margin: 30px auto;
+  padding: 0 50px;
+}
+
+.show_contact h2 {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
 }

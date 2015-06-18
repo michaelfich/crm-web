@@ -1,0 +1,13 @@
+<section class="show_contact">
+  <h2>
+    <%= @contact.first_name %> <%= @contact.last_name %>
+  </h2>
+
+  <p>
+    <strong>Email Address:</strong> <a href="mailto:<%= @contact.email %>"><%= @contact.email %></a>
+  </p>
+
+  <p>
+    <strong>Notes:</strong> <%= @contact.note %>
+  </p>
+</section>

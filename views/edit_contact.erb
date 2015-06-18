@@ -1,0 +1,38 @@
+<section class="edit_contact">
+  <h2>Edit Contact</h2>
+
+  <form action="/contacts/<%= @contact.id %>" method="post">
+
+    <div class="field">
+      <label for="edit-first-name">First name</label>
+      <input type="text" name="first_name" value="<%= @contact.first_name %>" id="edit-first-name">
+    </div>
+
+    <div class="field">
+      <label for="edit-last-name">Last name</label>
+      <input type="text" name="last_name" value="<%= @contact.last_name %>" id="edit-last-name">
+    </div>
+
+    <div class="field">
+      <label for="edit-email">Email address</label>
+      <input type="text" name="email" value="<%= @contact.email %>" id="edit-email">
+    </div>
+
+    <div class="field">
+      <label for="edit-note">Note</label>
+      <input type="text" name="note" value="<%= @contact.note %>" id="edit-note">
+    </div>
+
+    <div class="field button">
+      <input type="hidden" name="_method" value="put">
+      <button type="submit" class="edit">Edit Contact</button>
+    </div>
+  </form>
+
+  <form action="/contacts/<%= @contact.id %>" method="post">
+    <div class="field button">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit" class="delete">Delete Contact</button>
+    </div>
+  </form>
+</section>
