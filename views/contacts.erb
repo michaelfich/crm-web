@@ -1,7 +1,24 @@
-<h2>View all contacts</h2>
+<section class="show_contacts">
+  <h2 class="wide">All contacts</h2>
 
-<ul>
-<% @@rolodex.contacts.each do |contact| %>
-  <li><%= contact.first_name %> <%= contact.last_name %></li>
-<% end %>
-</ul>
+  <ul class="contacts">
+  <% @@rolodex.contacts.each do |contact| %>
+    <li class="contact">
+      <div class="name">
+        <%= contact.first_name %> <%= contact.last_name %>
+      </div>
+      <div class="edit">
+        <form action="/contacts/<%= contact.id %>/edit" method="get">
+          <button type="submit" class="small btn edit">Edit Contact</button>
+        </form>
+      </div>
+      <div class="delete">
+        <form action="/contacts/<%= contact.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" class="small btn delete">Delete Contact</button>
+        </form>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+</section>

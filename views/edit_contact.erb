@@ -23,16 +23,20 @@
       <input type="text" name="note" value="<%= @contact.note %>" id="edit-note">
     </div>
 
-    <div class="field button">
-      <input type="hidden" name="_method" value="put">
-      <button type="submit" class="edit">Edit Contact</button>
+    <div class="field submit">
+      <div class="half first-half">
+        <input type="hidden" name="_method" value="put">
+        <button type="submit" class="btn edit">Edit Contact</button>
+      </div>
     </div>
   </form>
 
   <form action="/contacts/<%= @contact.id %>" method="post">
-    <div class="field button">
-      <input type="hidden" name="_method" value="delete">
-      <button type="submit" class="delete">Delete Contact</button>
+    <div class="field submit">
+      <div class="half second-half">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn delete">Delete Contact</button>
+      </div>
     </div>
   </form>
 </section>

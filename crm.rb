@@ -8,7 +8,7 @@ require 'sinatra'
 @@rolodex.add_contact(Contact.new("Sergey", "Brin", "sergey@google.com", "Co-Founder"))
 
 get "/" do
-  @crm_app_name = "My CRM"
+  @@crm_app_name = "My CRM"
   redirect to('/contacts')
 end
 

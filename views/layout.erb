@@ -3,22 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Customer Relationship Management</title>
+<!--
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600' rel='stylesheet' type='text/css'>
+-->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <li><a href="/contacts">View all contacts</a></li>
-      <li><a href="/contacts/new">Add a contact</a></li>
-    </ul>
-  </nav>
-  <header>
-    <h1>Customer Relationship Management</h1>
+  <header class="outer-container">
+    <nav class="inner-container">
+      <ul>
+        <li><a href="/contacts" class="button">View all contacts</a></li>
+        <li><a href="/contacts/new" class="button">Add a contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="inner_container">
+      <h1>Customer Relationship Management</h1>
+    </section>
   </header>
-  <section>
-    <%= yield %>
+  <section class="outer-container">
+    <section id="container" class="inner-container">
+      <%= yield %>
+    </section>
   </section>
   <footer>
     <ul class="social">

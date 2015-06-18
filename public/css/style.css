@@ -1,9 +1,16 @@
 body {
-  width: 800px;
-  margin: 20px auto;
+  padding: 0;
+  margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
   font-size: 10pt;
   color: #222;
+  background: #333;
+}
+
+#container {
+  min-height: 300px;
+  overflow: auto;
+  width: 800px;
 }
 
 a {
@@ -17,22 +24,32 @@ a:hover, a:active {
 
 header {
   border-bottom: 1px solid #444;
-  margin-bottom: 20px;
 }
 
 h1 {
   padding-top: 50px;
   letter-spacing: -2px;
-  color: #444;
+  color: #ddd;
   font-size: 3em;
   margin-bottom: 0;
   text-align: center;
 }
 
 h2 {
-  color: #666;
-  font-style: oblique;
   text-align: center;
+  /*font-style: oblique;*/
+  color: #555;
+  font-weight: 900;
+  width: 400px;
+  margin: 0 auto 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-size: 12pt;
+}
+
+h2.wide {
+  width: 100%;
+  text-align: left;
 }
 
 nav > ul {
@@ -45,16 +62,17 @@ nav > ul li {
   display: inline-block;
 }
 
-nav > ul li a {
+.button {
   display: block;
   padding: .5em 2em;
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   text-decoration: none;
-  color: #555;
+  color: #eee;
+  cursor: pointer;
 }
 
-nav > ul li a:hover,
-nav > ul li a:active {
+.button:hover,
+.button:active {
   border: 1px solid red;
   text-decoration: none;
   color: red;
@@ -86,8 +104,9 @@ form div.button {
 
 footer {
   border-top: 1px solid #444;
-  margin-top: 20px;
+  /*padding-top: 20px;*/
   padding-top: 5px;
+  color: white;
 }
 
 ul.social {
@@ -112,4 +131,123 @@ ul.social li {
 .show_contact h2 {
   border-bottom: 1px solid #eee;
   margin-bottom: 20px;
+}
+
+
+ul.contacts {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+ul.contacts li.contact {
+  padding: 5px 0;
+  overflow: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+ul.contacts li.contact:first-child {
+  border-top: 1px solid #ddd;
+}
+
+ul.contacts li.contact:hover {
+  background: #eee;
+}
+
+ul.contacts li.contact div.name {
+  width: 520px;
+  float: left;
+  height: 26px;
+  line-height: 32px;
+}
+
+ul.contacts li.contact div.edit,
+ul.contacts li.contact div.delete {
+  float: left;
+  padding-left: 10px;
+}
+
+ul.contacts li.contact div.edit button,
+ul.contacts li.contact div.delete button {
+  float: right;
+  width: 130px;
+}
+
+ul.contacts li.contact div a.button {
+  text-align: center;
+}
+
+form.add_contact div.submit,
+form.edit_contact div.submit {
+  text-align: center;
+  overflow: auto;
+}
+
+div.submit {
+  text-align: center;
+}
+
+button.btn {
+  background-image: none;
+  display: inline-block;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 8px 20px;
+  border: 1px solid #555555;
+  background-color: #ffffff;
+  color: #555555;
+}
+
+button.add,
+button.edit,
+button.delete
+ {
+  border: 1px solid transparent;
+  color: #ffffff;
+}
+
+button.add {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+button.edit {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+button.delete {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+button {
+  cursor: pointer;
+}
+
+div.half {
+  width: 50%;
+  float: left;
+}
+
+div.first-half {
+  text-align: left;
+}
+
+div.second-half {
+  text-align: right;
+}
+
+.outer-container {
+  width: 100%;
+}
+
+.inner-container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+section.outer-container {
+  background: #fff;
+  padding: 50px 0;
 }
