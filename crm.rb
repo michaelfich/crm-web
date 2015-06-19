@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'data_mapper'
-require_relative 'rolodex'
 
 DataMapper::setup(:default, 'sqlite:crm.sqlite3')
 
@@ -13,23 +12,17 @@ class Contact
   property :email, String
   property :note, Text
 
-  def initialize(first_name, last_name, email, note)
-    @first_name = first_name
-    @last_name = last_name
-    @email = email
-    @note = note
-  end
-
   DataMapper.finalize
   DataMapper.auto_upgrade!
 end
 
 get "/" do
   @@crm_app_name = "My CRM"
-  redirect to('/contacts')
+  redirect to '/contacts'
 end
 
 get "/contacts" do
+  @contacts = Contact.all
   erb :contacts
 end
 
@@ -43,16 +36,19 @@ post "/contacts" do
   email = params['email'].downcase
   notes = params['note']
 
-  contact = Contact.new(first_name, last_name, email, notes)
+  contact = Contact.create(
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
+    note: notes
+  )
 
-  @@rolodex.add_contact(contact)
-
-  redirect to('/contacts')
+  redirect to '/contacts'
 end
 
 get "/contacts/:id" do
   @id = params['id'].to_i
-  @contact = @@rolodex.find_contact(@id)
+  @contact = Contact.get(@id)
 
   if @contact
     erb :show_contact
@@ -63,7 +59,7 @@ end
 
 get "/contacts/:id/edit" do
   @id = params['id'].to_i
-  @contact = @@rolodex.find_contact(@id)
+  @contact = Contact.get(@id)
 
   if @contact
     erb :edit_contact
@@ -73,16 +69,23 @@ get "/contacts/:id/edit" do
 end
 
 put "/contacts/:id" do
-  @id = params['id'].to_i
-  @contact = @@rolodex.find_contact(@id)
+  id = params['id'].to_i
+  first_name = params['first_name'].capitalize
+  last_name = params['last_name'].capitalize
+  email = params['email'].downcase
+  note = params['note']
 
-  if @contact
-    @contact.first_name = params['first_name']
-    @contact.last_name = params['last_name']
-    @contact.email = params['email']
-    @contact.note = params['note']
+  contact = Contact.get(id)
 
-    redirect to('/contacts')
+  if contact
+    contact.update(
+      first_name: first_name,
+      last_name: last_name,
+      email: email,
+      note: note
+    )
+
+    redirect to '/contacts'
   else
     raise Sinatra::NotFound
   end
@@ -90,11 +93,11 @@ end
 
 delete "/contacts/:id" do
   @id = params['id'].to_i
-  @contact = @@rolodex.find_contact(@id)
+  contact = Contact.get(@id)
 
-  if @contact
-    @@rolodex.remove_contact(@contact)
-    redirect to('/contacts')
+  if contact
+    contact.destroy
+    redirect to '/contacts'
   else
     raise Sinatra::NotFound
   end
