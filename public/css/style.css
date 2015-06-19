@@ -8,9 +8,10 @@ body {
 a {
   color: red;
   text-decoration: none;
+  outline: none;
 }
 
-a:hover, a:active {
+a:hover, a:active, a:focus {
   text-decoration: underline;
 }
 
@@ -26,15 +27,18 @@ h1 {
 }
 
 h2 {
-  text-transform: uppercase;
   color: #777;
-  font-weight: bold;
-  font-size: 1.25em;
-  letter-spacing: -0.05em;
+  font-weight: 400;
+  font-size: 1.7em;
+  letter-spacing: -1px;
   line-height: 1em;
-  border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
   text-align: left;
+}
+
+h2 span.name {
+  color: #444;
+  text-transform: none;
 }
 
 .outer-container {
@@ -166,6 +170,7 @@ form div.big textarea {
   padding: 10px;
   border: 1px solid #ddd;
   font-size: 1em;
+  color: #777;
 }
 
 form div.small input {
@@ -180,7 +185,17 @@ form div.big textarea {
 
 form div.small input:focus,
 form div.big textarea:focus {
-  border-color: red;
+  border-color: #aaa;
+  color: #000;
+  /*background: #eee;*/
+}
+
+form button {
+  outline: none;
+}
+
+form button:focus {
+  text-decoration: underline;
 }
 
 button.btn {
@@ -269,6 +284,7 @@ li.contact div.name a {
   display: inline-block;
   font-size: 10pt;
   width: 779px;
+  /*padding: 0 10px;*/
 }
 
 ul.contacts li.contact div.edit,
@@ -284,7 +300,7 @@ ul.contacts li.contact div.delete button {
 }
 
 .show_contact article {
-  margin: 25px 0;
+  margin: 30px 0 10px;
 }
 
 .show_contact p.content {
