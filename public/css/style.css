@@ -178,10 +178,15 @@ form div.big textarea {
   max-width: 930px;
 }
 
+form div.small input:focus,
+form div.big textarea:focus {
+  border-color: red;
+}
+
 button.btn {
   background-image: none;
   display: inline-block;
-  border-radius: 3px;
+  /*border-radius: 3px;*/
   cursor: pointer;
   padding: 8px 20px;
   border: 1px solid #555555;
