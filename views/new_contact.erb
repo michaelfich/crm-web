@@ -1,28 +1,29 @@
 <h2>Create a new contact</h2>
 
-<form action="/contacts" method="post" class="add_contact">
+<form action="/contacts" method="post" class="contact add">
 
-  <div class="field">
+  <div class="field small">
     <label for="contact-first-name">First name</label>
-    <input type="text" name="first_name" id="contact-first-name" placeholder="First name">
+    <input type="text" name="first_name" id="contact-first-name" placeholder="Joe">
   </div>
 
-  <div class="field">
+  <div class="field small">
     <label for="contact-last-name">Last name</label>
-    <input type="text" name="last_name" id="contact-last-name" placeholder="Last name">
+    <input type="text" name="last_name" id="contact-last-name" placeholder="Smith">
   </div>
 
-  <div class="field">
+  <div class="field small">
     <label for="contact-email">Email address</label>
-    <input type="text" name="email" id="contact-email" placeholder="Email address">
+    <input type="email" name="email" id="contact-email" placeholder="jsmith@example.com">
+  </div>
+
+  <div class="field big">
+    <label for="contact-note">Note</label>
+    <textarea name="note" id="contact-note" placeholder="A description of the contact"></textarea>
   </div>
 
   <div class="field">
-    <label for="contact-note">Note</label>
-    <input type="text" name="notes" id="contact-note" placeholder="Note">
-  </div>
-
-  <div class="field submit">
     <button type="submit" class="btn add">Add Contact</button>
   </div>
+
 </form>

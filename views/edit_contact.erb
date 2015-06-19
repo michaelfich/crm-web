@@ -1,42 +1,40 @@
-<section class="edit_contact">
-  <h2>Edit Contact</h2>
+<h2>Edit Contact</h2>
+
+<section class="contact-form">
+
+  <form action="/contacts/<%= @contact.id %>" method="post" class="contact edit">
+
+    <div class="field small">
+      <label for="contact-first-name">First name</label>
+      <input type="text" name="first_name" id="contact-first-name" placeholder="Joe" value="<%= @contact.first_name %>">
+    </div>
+
+    <div class="field small">
+      <label for="contact-last-name">Last name</label>
+      <input type="text" name="last_name" id="contact-last-name" placeholder="Smith" value="<%= @contact.last_name %>">
+    </div>
+
+    <div class="field small">
+      <label for="contact-email">Email address</label>
+      <input type="email" name="email" id="contact-email" placeholder="jsmith@example.com" value="<%= @contact.email %>">
+    </div>
+
+    <div class="field big">
+      <label for="contact-note">Note</label>
+      <textarea name="note" id="contact-note" placeholder="A description of the contact"><%= @contact.note %></textarea>
+    </div>
+
+    <div class="field submit edit">
+      <input type="hidden" name="_method" value="put">
+      <button type="submit" class="btn edit">Edit Contact</button>
+    </div>
+  </form>
 
   <form action="/contacts/<%= @contact.id %>" method="post">
-
-    <div class="field">
-      <label for="edit-first-name">First name</label>
-      <input type="text" name="first_name" value="<%= @contact.first_name %>" id="edit-first-name">
-    </div>
-
-    <div class="field">
-      <label for="edit-last-name">Last name</label>
-      <input type="text" name="last_name" value="<%= @contact.last_name %>" id="edit-last-name">
-    </div>
-
-    <div class="field">
-      <label for="edit-email">Email address</label>
-      <input type="text" name="email" value="<%= @contact.email %>" id="edit-email">
-    </div>
-
-    <div class="field">
-      <label for="edit-note">Note</label>
-      <input type="text" name="note" value="<%= @contact.note %>" id="edit-note">
-    </div>
-
-    <div class="field submit">
-      <div class="half first-half">
-        <input type="hidden" name="_method" value="put">
-        <button type="submit" class="btn edit">Edit Contact</button>
-      </div>
+    <div class="field submit delete">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit" class="btn delete">Delete Contact</button>
     </div>
   </form>
 
-  <form action="/contacts/<%= @contact.id %>" method="post">
-    <div class="field submit">
-      <div class="half second-half">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit" class="btn delete">Delete Contact</button>
-      </div>
-    </div>
-  </form>
 </section>

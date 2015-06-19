@@ -1,16 +1,8 @@
 body {
+  background: #2a2a2a;
+  margin: 0;
   padding: 0;
-  margin: 0 auto;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 10pt;
-  color: #222;
-  background: #333;
-}
-
-#container {
-  min-height: 300px;
-  overflow: auto;
-  width: 800px;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -22,169 +14,168 @@ a:hover, a:active {
   text-decoration: underline;
 }
 
-header {
-  border-bottom: 1px solid #444;
+h1, h2 {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  padding-top: 50px;
-  letter-spacing: -2px;
-  color: #ddd;
-  font-size: 3em;
-  margin-bottom: 0;
-  text-align: center;
+  font-size: 3.2em;
+  letter-spacing: -0.075em;
+  color: #fff;
 }
 
 h2 {
-  text-align: center;
-  /*font-style: oblique;*/
-  color: #555;
-  font-weight: 900;
-  width: 400px;
-  margin: 0 auto 20px;
   text-transform: uppercase;
-  letter-spacing: -1px;
-  font-size: 12pt;
-}
-
-h2.wide {
-  width: 100%;
+  color: #777;
+  font-weight: bold;
+  font-size: 1.25em;
+  letter-spacing: -0.05em;
+  line-height: 1em;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
   text-align: left;
 }
 
-nav > ul {
-  list-style: none;
-  padding: 0;
-  text-align: right;
+.outer-container {
+  width: 100%;
 }
 
-nav > ul li {
-  display: inline-block;
+.inner-container {
+  width: 960px;
+  margin: 0 auto;
 }
 
-.button {
-  display: block;
-  padding: .5em 2em;
-  border: 1px solid #eee;
-  text-decoration: none;
-  color: #eee;
-  cursor: pointer;
+/* header */
+
+header.outer-container {
+  margin: 0 auto;
 }
 
-.button:hover,
-.button:active {
-  border: 1px solid red;
-  text-decoration: none;
-  color: red;
+  header.outer-container section.inner-container {
+    position: relative;
+    padding: 120px 0 0;
+  }
+
+  ul.primary {
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 0;
+    padding: 0;
+    width: 315px;
+    text-align: right;
+  }
+
+  ul.primary li a {
+    display: inline-block;
+    border: 1px solid #eee;
+    width: 150px;
+    color: #eee;
+    cursor: pointer;
+    text-align: center;
+    font-size: 10pt;
+    margin: 1px 0 1px 5px;
+    line-height: 2.4em;
+    float: left;
+  }
+
+  ul.primary li a:hover {
+    text-decoration: none;
+    color: red;
+    border-color: red;
+  }
+
+/* footer */
+
+section.outer-container {
+  background: white;
+  padding: 50px 0;
+}
+
+footer.outer-container {
+  padding-top: 10px;
+  padding-bottom: 80px;
+}
+
+  ul.social {
+    list-style: none;
+    margin: .1em 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  ul.social li {
+    display: inline-block;
+    color: white;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 0 .3em;
+  }
+
+  ul.social li a {
+    font-weight: normal;
+  }
+
+/* content */
+
+  ul.contacts {
+    padding: 0;
+    margin: 0;
+  }
+
+form.contact {
+  overflow: auto;
+  width: 960px;
 }
 
 form div.field {
-  width: 400px;
-  margin: 0 auto 10px;
+  margin: 10px 0;
+  padding: 0 1px;
+  box-sizing: border-box;
 }
 
-form div.field label {
-  display: block;
-  margin: 0 auto;
+form div.field.small {
+  width: 320px;
+  float: left;
+}
+
+form div.field.big {
+  width: 960px;
+}
+
+form div.small label,
+form div.big label {
+  margin: 0 1px;
   font-size: .85em;
-  color: #777;
+  display: block;
+  color: #444;
   text-transform: uppercase;
   font-weight: 800;
 }
 
-form div.field input {
+form div.big label {
+  width: 100%;
+}
+
+form div.small input,
+form div.big textarea {
   display: block;
+  outline: none;
   padding: 10px;
-  width: 376px;
+  border: 1px solid #ddd;
+  font-size: 1em;
 }
 
-form div.button {
-  text-align: center;
+form div.small input {
+  width: 290px;
 }
 
-footer {
-  border-top: 1px solid #444;
-  /*padding-top: 20px;*/
-  padding-top: 5px;
-  color: white;
-}
-
-ul.social {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  text-align: center;
-}
-
-ul.social li {
-  display: inline;
-  margin: 0 5px;
-}
-
-.show_contact {
-  width: 300px;
-  margin: 30px auto;
-  padding: 0 50px;
-}
-
-.show_contact h2 {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 20px;
-}
-
-
-ul.contacts {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-}
-
-ul.contacts li.contact {
-  padding: 5px 0;
-  overflow: auto;
-  border-bottom: 1px solid #ddd;
-}
-
-ul.contacts li.contact:first-child {
-  border-top: 1px solid #ddd;
-}
-
-ul.contacts li.contact:hover {
-  background: #eee;
-}
-
-ul.contacts li.contact div.name {
-  width: 520px;
-  float: left;
-  height: 26px;
-  line-height: 32px;
-}
-
-ul.contacts li.contact div.edit,
-ul.contacts li.contact div.delete {
-  float: left;
-  padding-left: 10px;
-}
-
-ul.contacts li.contact div.edit button,
-ul.contacts li.contact div.delete button {
-  float: right;
-  width: 130px;
-}
-
-ul.contacts li.contact div a.button {
-  text-align: center;
-}
-
-form.add_contact div.submit,
-form.edit_contact div.submit {
-  text-align: center;
-  overflow: auto;
-}
-
-div.submit {
-  text-align: center;
+form div.big textarea {
+  height: 200px;
+  width: 930px;
+  max-width: 930px;
 }
 
 button.btn {
@@ -221,33 +212,68 @@ button.delete {
   border-color: #d43f3a;
 }
 
-button {
-  cursor: pointer;
+section.contact-form {
+  position: relative;
+  padding-bottom: 41px;
 }
 
-div.half {
+div.submit {
+  position: absolute;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
   width: 50%;
-  float: left;
+  bottom: 0;
 }
 
-div.first-half {
-  text-align: left;
+div.submit.edit {
+  left: 0;
 }
 
-div.second-half {
+div.submit.delete {
+  right: 0;
   text-align: right;
 }
 
-.outer-container {
-  width: 100%;
+ul.contacts {
+  list-style: none;
+  padding: 0;
 }
 
-.inner-container {
-  width: 800px;
-  margin: 0 auto;
+ul.contacts li.contact {
+  padding: 5px 5px;
+  overflow: auto;
+  border-bottom: 1px solid #efefef;
 }
 
-section.outer-container {
-  background: #fff;
-  padding: 50px 0;
+ul.contacts li.contact:first-child {
+  border-top: 1px solid #efefef;
+}
+
+ul.contacts li.contact:hover {
+  background: #eee;
+}
+
+ul.contacts li.contact div.name {
+  float: left;
+  height: 26px;
+  line-height: 32px;
+}
+
+ul.contacts li.contact div.edit,
+ul.contacts li.contact div.delete {
+  float: left;
+  padding-left: 5px;
+}
+
+ul.contacts li.contact div.edit button,
+ul.contacts li.contact div.delete button {
+  float: right;
+  width: 80px;
+}
+
+li.contact a {
+  display: inline-block;
+  font-size: 10pt;
+  width: 780px;
 }

@@ -24,7 +24,7 @@ post "/contacts" do
   first_name = params['first_name'].capitalize
   last_name = params['last_name'].capitalize
   email = params['email'].downcase
-  notes = params['notes']
+  notes = params['note']
 
   contact = Contact.new(first_name, last_name, email, notes)
 
