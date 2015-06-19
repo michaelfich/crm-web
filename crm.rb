@@ -1,11 +1,28 @@
-require_relative 'rolodex'
-require_relative 'contact'
 require 'sinatra'
+require 'data_mapper'
+require_relative 'rolodex'
 
-@@rolodex = Rolodex.new
-@@rolodex.add_contact(Contact.new("Yehuda", "Katz", "yehuda@example.com", "Developer"))
-@@rolodex.add_contact(Contact.new("Mark", "Zuckerberg", "mark@facebook.com", "CEO"))
-@@rolodex.add_contact(Contact.new("Sergey", "Brin", "sergey@google.com", "Co-Founder"))
+DataMapper::setup(:default, 'sqlite:crm.sqlite')
+
+class Contact
+  include DataMapper::Resource
+
+  property :id, Serial
+  property :first_name, String
+  property :last_name, String
+  property :email, String
+  property :note, Text
+
+  def initialize(first_name, last_name, email, note)
+    @first_name = first_name
+    @last_name = last_name
+    @email = email
+    @note = note
+  end
+
+  DataMapper.finalize
+  DataMapper.auto_upgrade!
+end
 
 get "/" do
   @@crm_app_name = "My CRM"
