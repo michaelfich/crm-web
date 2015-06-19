@@ -2,7 +2,7 @@ require 'sinatra'
 require 'data_mapper'
 require_relative 'rolodex'
 
-DataMapper::setup(:default, 'sqlite:crm.sqlite')
+DataMapper::setup(:default, 'sqlite:crm.sqlite3')
 
 class Contact
   include DataMapper::Resource
