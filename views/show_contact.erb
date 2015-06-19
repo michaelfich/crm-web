@@ -1,13 +1,38 @@
 <section class="show_contact">
+
   <h2>
     <%= @contact.first_name %> <%= @contact.last_name %>
   </h2>
 
-  <p>
-    <strong>Email Address:</strong> <a href="mailto:<%= @contact.email %>"><%= @contact.email %></a>
-  </p>
+  <article>
+    <strong>Email Address:</strong>
 
-  <p>
-    <strong>Notes:</strong> <%= @contact.note %>
-  </p>
+    <p class="content">
+      <a href="mailto:<%= @contact.email %>"><%= @contact.email %></a>
+    </p>
+  </article>
+
+  <article>
+    <strong>Notes:</strong>
+
+    <p class="content">
+      <%= @contact.note %>
+    </p>
+  </article>
+
+  <article>
+    <form action="/contacts/<%= @contact.id %>/edit" action="get" class="inline">
+      <div class="field">
+        <button type="submit" class="btn edit">Edit Contact</button>
+      </div>
+    </form>
+
+    <form action="/contacts/<%= @contact.id %>" method="post" class="inline">
+      <div class="field">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn delete">Delete Contact</button>
+      </div>
+    </form>
+  </article>
+
 </section>

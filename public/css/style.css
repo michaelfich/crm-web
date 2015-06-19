@@ -231,7 +231,7 @@ div.submit.edit {
 }
 
 div.submit.delete {
-  right: 0;
+  right: 6px;
   text-align: right;
 }
 
@@ -260,6 +260,12 @@ ul.contacts li.contact div.name {
   line-height: 32px;
 }
 
+li.contact div.name a {
+  display: inline-block;
+  font-size: 10pt;
+  width: 779px;
+}
+
 ul.contacts li.contact div.edit,
 ul.contacts li.contact div.delete {
   float: left;
@@ -272,8 +278,15 @@ ul.contacts li.contact div.delete button {
   width: 80px;
 }
 
-li.contact a {
-  display: inline-block;
-  font-size: 10pt;
-  width: 780px;
+.show_contact article {
+  margin: 25px 0;
+}
+
+.show_contact p.content {
+  margin: 10px 20px;
+}
+
+form.inline,
+form.inline div.field {
+  display: inline;
 }
